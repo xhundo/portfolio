@@ -1,0 +1,18 @@
+{
+  "name": "vite-tailwind-boiler",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "watch": "npx tailwindcss -i ./input.css -o ./css/style.css --watch",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.5",
+    "tailwindcss": "^3.2.7",
+    "vite": "^4.2.0"
+  }
+}
