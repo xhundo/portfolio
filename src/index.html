@@ -20,7 +20,7 @@
         class="h-25 w-62 md:h-50 md:w-124"
       />
     </header>
-    <section class="mt-90 px-34 md:px-99">
+    <section class="mt-45 px-34 md:mt-90 md:px-99">
       <div class="flex flex-col justify-between md:flex-row">
         <p
           class="max-w-362 text-justify text-sm font-normal text-white md:max-w-802 md:text-lg"
@@ -31,7 +31,7 @@
         </p>
         <button
           id="download"
-          class="mt-2.5 h-11 max-w-152 rounded-lg border border-darkGray p-2.5 duration-200 ease-in-out hover:border-black hover:bg-darkGray md:mt-0"
+          class="mt-2.5 h-11 max-w-152 rounded-lg border border-darkGray p-2.5 duration-700 ease-in-out hover:border-black hover:bg-darkGray md:mt-0"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +48,45 @@
       </div>
     </section>
     <main class="mx-34 mt-11 flex flex-col md:mx-99 md:mt-90 md:flex-row">
-      <h1 class="font-sans text-sm font-bold uppercase text-white md:text-2xl">
-        Featured projects
-      </h1>
+      <div class="container flex justify-between">
+        <h1
+          class="font-sans text-sm font-bold uppercase text-white md:text-2xl"
+        >
+          Featured projects
+        </h1>
+        <div class="hidden md:flex md:justify-between">
+          <button id="backward-btn" class="mr-64">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="26"
+              fill="none"
+            >
+              <path
+                fill="#fff"
+                fill-rule="evenodd"
+                d="M14.375 24.252 3.369 13.427 14.375 2.602l-1.7-1.675L0 13.434l12.675 12.493 1.7-1.675Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <button id="forward-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="26"
+              fill="none"
+            >
+              <path
+                fill="#fff"
+                fill-rule="evenodd"
+                d="m.375 24.252 11.006-10.825L.375 2.602l1.7-1.675L14.75 13.434 2.075 25.927l-1.7-1.675Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
     </main>
     <script type="module" src="../pages/index.js"></script>
   </body>
