@@ -5,13 +5,16 @@ module.exports = {
     extend: {
       colors: {
         darkGray: 'rgba(255, 255, 255, 0.2)',
+        lightGray: 'rgba(217, 217, 217, 1)',
       },
       width: {
         62: '3.875',
+        60: '3.75em',
         124: '7.75em',
       },
       height: {
         50: '3.125em',
+        60: '3.75em',
         25: '1.563em',
       },
       spacing: {
@@ -27,6 +30,13 @@ module.exports = {
         152: '9.5em',
         362: '22.625em',
         802: '50.125em',
+      },
+      gap: {
+        30: '1.875em',
+        6.5: '1.563em',
+      },
+      opacity: {
+        0.7: '0.70',
       },
       fontFamily: {
         sans: ['Manrope', 'Arial', 'sans-serif'],
