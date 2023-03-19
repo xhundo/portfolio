@@ -1,1 +1,55 @@
+import { template } from "../utils/constants";
 
+let elems;
+const container = document.querySelector("#projects");
+
+const projects = [
+    {
+        title: "News Explorer",
+        src: "../assets/newsexx.png",
+        alt: "News Explorer",
+        link: "https://github.com/xhundo",
+    },
+    {
+        title: "Around The Us",
+        src: "../assets/around.jpg",
+        alt: "Around The Us",
+        link: "https://github.com/xhundo",
+    },
+    {
+        title: "Portland to portland",
+        src: "../assets/portland.png",
+        alt: "Project 003",
+        link: "https://github.com/xhundo",
+    },
+    {
+        title: "",
+        src: "",
+        alt: "Project 004",
+        link: "https://github.com/xhundo",
+    },
+];
+
+function getContent(item) {
+    elems = template.content.cloneNode(true);
+    const content = template.content;
+    const title = content.querySelector("#title");
+    const image = content.querySelector("#image");
+    const link = content.querySelector("#link");
+
+    title.textContent = item.title;
+    image.src = item.src;
+    image.alt = item.alt;
+    link.href = item.link;
+
+    return elems;
+}
+
+function renderer(items, container) {
+    items.forEach((i) => {
+        getContent(i);
+        container.append(elems);
+    });
+}
+
+renderer(projects, container);
