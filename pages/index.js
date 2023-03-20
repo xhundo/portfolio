@@ -47,9 +47,9 @@ function getContent(item) {
     return elems;
 }
 
-function renderer(items, container) {
+function renderer(items, container, cb) {
     items.forEach((i) => {
-        getContent(i);
+        cb(i);
         container.append(elems);
     });
 }
@@ -65,4 +65,4 @@ if (projects.length > 4) {
 }
 
 console.log(backward, forward);
-renderer(projects, container);
+renderer(projects, container, getContent);
