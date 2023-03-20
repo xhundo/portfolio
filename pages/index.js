@@ -2,6 +2,8 @@ import { template } from "../utils/constants";
 
 let elems;
 const container = document.querySelector("#projects");
+const backward = document.querySelector("#backward");
+const forward = document.querySelector("#forward");
 
 const projects = [
     {
@@ -52,4 +54,15 @@ function renderer(items, container) {
     });
 }
 
+if (projects.length > 4) {
+    forward.classList.remove("cursor-not-allowed");
+    backward.classList.remove("cursor-not-allowed");
+} else {
+    forward.classList.add("cursor-not-allowed");
+    backward.classList.add("cursor-not-allowed");
+    forward.setAttribute("disabled", "");
+    backward.setAttribute("disabled", "");
+}
+
+console.log(backward, forward);
 renderer(projects, container);
