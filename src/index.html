@@ -147,12 +147,44 @@
                 </template>
             </div>
         </main>
-        <section id="skill" class="mx-34 mt-45 flex flex-col md:mx-99 md:mt-90">
+        <section class="mx-34 mt-45 flex flex-col md:mx-99 md:mt-90">
             <h2
                 class="font-sans text-sm font-bold uppercase leading-3 text-white md:text-2xl md:leading-8"
             >
                 Tools & Skills
             </h2>
+            <div
+                class="mt-25 flex gap-x-7.5 md:hidden md:gap-x-4"
+                id="skills"
+            ></div>
+            <div
+                class="container mt-5 flex gap-x-22 md:mt-10 md:hidden md:gap-x-4"
+                id="skills-2"
+            ></div>
+            <div
+                class="mt-5 hidden gap-x-5 md:mt-10 md:flex md:gap-x-4"
+                id="skills-3"
+            ></div>
+            <template id="skill">
+                <!-- Skill -->
+                <div
+                    class="flex h-8 w-74 justify-center rounded-lg border border-semiDarkGray py-2 px-2.5 first:hidden md:h-16 md:w-124 md:p-4"
+                    id="skill-container"
+                >
+                    <img
+                        src="../assets/mobile/HTML5.svg"
+                        alt="HTML5"
+                        id="icon"
+                        class="object-contain"
+                    />
+                    <p
+                        class="text-center font-sans text-xs font-normal uppercase leading-3 text-white md:self-center md:text-sm"
+                        id="skill-p"
+                    >
+                        HTML5
+                    </p>
+                </div>
+            </template>
         </section>
         <script type="module" src="../pages/index.js"></script>
     </body>
