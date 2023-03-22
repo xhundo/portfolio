@@ -12,7 +12,7 @@
         />
         <title>Portfolio</title>
     </head>
-    <body class="bg-black">
+    <body class="flex flex-col justify-center bg-black">
         <header class="flex pl-34 pt-27 pb-7 md:px-99 md:py-38">
             <img
                 src="../assets/MyLogo.svg"
@@ -21,7 +21,7 @@
             />
         </header>
         <section class="mt-45 px-34 md:mt-90 md:px-99">
-            <div class="flex flex-col justify-between md:flex-row">
+            <div class="flex flex-col justify-between lg:flex-row">
                 <p
                     class="max-w-362 text-justify text-sm font-normal text-white md:max-w-802 md:text-lg"
                 >
@@ -32,7 +32,7 @@
                 </p>
                 <button
                     id="download"
-                    class="mt-2.5 h-11 max-w-152 rounded-lg border border-darkGray p-2.5 duration-700 ease-in-out md:mt-0 md:hover:border-black md:hover:bg-darkGray"
+                    class="mt-2.5 h-11 max-w-152 rounded-lg border border-darkGray p-2.5 duration-700 ease-in-out md:mt-5 md:mt-0 md:hover:border-black md:hover:bg-darkGray lg:mt-0"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@
         <main
             class="mx-34 mt-11 flex flex-col gap-6.5 md:mx-99 md:mt-90 md:gap-30"
         >
-            <div class="container flex items-center justify-between">
+            <div class="flex grow-0 items-center justify-between">
                 <h1
                     class="font-sans text-sm font-bold uppercase text-white md:text-2xl"
                 >
@@ -60,7 +60,7 @@
                 <div class="hidden md:flex md:justify-between">
                     <button
                         id="backward"
-                        class="mr-64 h-25 w-3.5 cursor-not-allowed"
+                        class="mr-64 h-25 w-3.5 cursor-not-allowed md:hidden lg:flex"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,10 @@
                             />
                         </svg>
                     </button>
-                    <button id="forward" class="h-25 w-3.5 cursor-not-allowed">
+                    <button
+                        id="forward"
+                        class="h-25 w-3.5 cursor-not-allowed md:hidden lg:flex"
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="15"
@@ -95,7 +98,7 @@
             </div>
             <!-- Projects containers -->
             <div
-                class="flex flex-col gap-6.5 md:flex-row md:flex-wrap md:gap-y-10"
+                class="flex flex-col gap-6.5 md:gap-y-10 lg:flex-row lg:flex-wrap"
                 id="projects"
             >
                 <template id="template">
@@ -116,7 +119,7 @@
                         </p>
                         <!-- Overlay -->
                         <div
-                            class="absolute inset-0 hidden max-h-full justify-center duration-700 ease-in-out md:flex md:group-hover:flex md:group-hover:bg-black md:group-hover:bg-opacity-0.7"
+                            class="absolute inset-0 hidden max-h-full justify-center duration-700 ease-in-out md:flex md:group-hover:flex md:group-hover:bg-black md:group-hover:bg-opacity-0.9"
                         >
                             <a
                                 href="https://github.com/xhundo"
@@ -162,7 +165,7 @@
                 id="skills-2"
             ></div>
             <div
-                class="mt-5 hidden gap-x-5 md:mt-10 md:flex md:gap-x-4"
+                class="mt-5 hidden gap-x-5 sm:flex-wrap md:mt-10 md:flex md:gap-x-4 lg:flex-row lg:flex-nowrap"
                 id="skills-3"
             ></div>
             <template id="skill">
@@ -175,7 +178,7 @@
                         src="../assets/mobile/HTML5.svg"
                         alt="HTML5"
                         id="icon"
-                        class="object-contain"
+                        class="shrink-0 object-contain"
                     />
                     <p
                         class="text-center font-sans text-xs font-normal uppercase leading-3 text-white md:self-center md:text-sm"
@@ -186,6 +189,41 @@
                 </div>
             </template>
         </section>
+        <footer
+            class="mx-34 mt-8 flex items-center justify-between py-2.5 md:mx-99 md:mt-74 md:py-12"
+        >
+            <p
+                class="font-sans text-sm font-normal uppercase leading-8 text-white md:text-lg"
+            >
+                © 2023 kurtney Joseph
+            </p>
+            <div class="flex items-center space-x-25 md:space-x-50">
+                <a
+                    href="https://github.com/xhundo"
+                    target="_blank"
+                    class="h-[10px] w-[10px] md:h-[25px] md:w-[25px]"
+                >
+                    <img
+                        src="../assets/links/Github-l.svg"
+                        class="h-[10px] w-[10px] object-contain md:h-[25px] md:w-[25px]"
+                    />
+                </a>
+                <a
+                    href="mailto:josephkurt18@gmail.com"
+                    class="h-[10px] w-[10px] object-contain md:h-[25px] md:w-[25px]"
+                >
+                    <img
+                        src="../assets/links/Vector-l.svg"
+                        class="h-[10px] w-[10px] object-contain md:h-[25px] md:w-[25px]"
+                /></a>
+                <a href="https://linkedin.com/in/kjoseph19" target="_blank">
+                    <img
+                        src="../assets/links/LinkedIn.svg"
+                        class="h-[10px] w-[10px] md:h-[25px] md:w-[25px]"
+                    />
+                </a>
+            </div>
+        </footer>
         <script type="module" src="../pages/index.js"></script>
     </body>
 </html>
