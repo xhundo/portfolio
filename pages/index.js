@@ -20,6 +20,7 @@ const container2 = document.querySelector("#skills-3");
 const wrapper2 = document.querySelector("#skills-2");
 const backward = document.querySelector("#backward");
 const forward = document.querySelector("#forward");
+const downloadBtn = document.querySelector("#download");
 let newSkills;
 
 const projects = [
@@ -27,19 +28,19 @@ const projects = [
         title: "News Explorer",
         src: "../assets/newsexx.png",
         alt: "News Explorer",
-        link: "https://github.com/xhundo",
+        link: "https://github.com/xhundo/news-explorer-frontend",
     },
     {
         title: "Around The Us",
         src: "../assets/around.jpg",
         alt: "Around The Us",
-        link: "https://github.com/xhundo",
+        link: "https://github.com/xhundo/se_project_aroundtheus",
     },
     {
         title: "Portland to portland",
         src: "../assets/portland.png",
         alt: "Project 003",
-        link: "https://github.com/xhundo",
+        link: "https://github.com/xhundo/web_project_3",
     },
     {
         title: "#",
@@ -131,6 +132,33 @@ function getSkills(i) {
 
     return skill;
 }
+
+async function downloadFile(url, filename = "") {
+    fetch(`${url}`, {
+        method: "GET",
+    })
+        .then((res) => res.blob())
+        .then((res) => {
+            const link = document.createElement("a");
+            link.setAttribute("download", filename);
+            const href = URL.createObjectURL(res);
+            link.href = href;
+            link.setAttribute("target", "_blank");
+            link.click();
+            URL.revokeObjectURL(href);
+        })
+        .catch((e) => {
+            console.log(e);
+        });
+}
+
+downloadBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    downloadFile(
+        'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e5ad6f40-433a-4a3b-ab96-2bffc9f72494/resumeupdated_%287%29.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230323%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230323T030828Z&X-Amz-Expires=86400&X-Amz-Signature=9416754bc057fc7be479aab508690992a437109e7f98ae677299c475872c9e93&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D"resumeupdated_%2525287%252529.pdf"&x-id=GetObject',
+        "KJResume.pdf"
+    );
+});
 
 function renderer(items, container, cb) {
     items.forEach((i) => {
