@@ -9,7 +9,7 @@ import node from "../assets/mobile/NODE.svg";
 import react from "../assets/mobile/REACT.svg";
 import mongo from "../assets/mobile/MONGO.svg";
 import github from "../assets/mobile/Github-m.svg";
-import figma from "../assets/mobile/figma-logo-1.svg";
+import figma from "../assets/mobile/Figma-logo-1.svg";
 
 let elems;
 let skills2;
