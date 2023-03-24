@@ -1,7 +1,7 @@
 import { template } from "../utils/constants";
 import { skillTemp } from "../utils/constants";
 import { skillSet } from "../utils/constants";
-import html5 from "../assets/mobile/html5.svg";
+import html5 from "../assets/mobile/HTML5.svg";
 import css from "../assets/mobile/CSS3.svg";
 import js from "../assets/mobile/JS.svg";
 import express from "../assets/mobile/express.svg";
