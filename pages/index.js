@@ -1,7 +1,7 @@
 import { template } from "../utils/constants";
 import { skillTemp } from "../utils/constants";
 import { skillSet } from "../utils/constants";
-import html5 from "../assets/mobile/HTML5.svg";
+import html5 from "../assets/mobile/html.SVG";
 import css from "../assets/mobile/CSS3.svg";
 import js from "../assets/mobile/JS.svg";
 import express from "../assets/mobile/express.svg";
@@ -26,19 +26,19 @@ let newSkills;
 const projects = [
     {
         title: "News Explorer",
-        src: "../assets/newsexx.png",
+        src: "/newsexx.png",
         alt: "News Explorer",
         link: "https://github.com/xhundo/news-explorer-frontend",
     },
     {
         title: "Around The Us",
-        src: "../assets/around.jpg",
+        src: "/around.jpg",
         alt: "Around The Us",
         link: "https://github.com/xhundo/se_project_aroundtheus",
     },
     {
         title: "Portland to portland",
-        src: "../assets/portland.png",
+        src: "/portland.png",
         alt: "Project 003",
         link: "https://github.com/xhundo/web_project_3",
     },
