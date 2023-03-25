@@ -1,7 +1,16 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
+import { splitVendorChunkPlugin } from "vite";
 
 export default defineConfig({
+    assetsInclude: [
+        "**/*.png",
+        "**/*.jpg",
+        "**/*.jpeg",
+        "**/*.gif",
+        "**/*.SVG",
+        "**/*.webp",
+    ],
     server: {
         port: 3000,
         open: "./src/index.html",
@@ -9,12 +18,9 @@ export default defineConfig({
     build: {
         rollupOptions: {
             input: {
-                main: resolve(__dirname, "src/index.html"),
+                nested: resolve(__dirname, "src/index.html"),
             },
         },
-        watch: {
-            exclude: "node_modules/**",
-            include: "css/**",
-        },
     },
+    plugins: [splitVendorChunkPlugin()],
 });
