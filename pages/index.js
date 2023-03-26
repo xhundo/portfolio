@@ -125,39 +125,26 @@ function getSkills(i) {
     if (i.hasOwnProperty("skill")) {
         skillWrapper.classList.add("gap-x-2");
         skillName.textContent = i.skill;
-    } else {
+        skillIcon.classList.remove("w-full");
+        skillIcon.classList.remove("md:w-full");
+    } else if (!i.hasOwnProperty("skill")) {
         skillWrapper.classList.remove("gap-x-2");
+        skillIcon.classList.add("w-full");
+        skillIcon.classList.add("md:w-full");
+        skillIcon.classList.remove("lg:w-1/2");
         skillName.textContent = "";
     }
 
     return skill;
 }
 
-async function downloadFile(url, filename = "") {
-    fetch(`${url}`, {
-        method: "GET",
-    })
-        .then((res) => res.blob())
-        .then((res) => {
-            const link = document.createElement("a");
-            link.setAttribute("download", filename);
-            const href = URL.createObjectURL(res);
-            link.href = href;
-            link.setAttribute("target", "_blank");
-            link.click();
-            URL.revokeObjectURL(href);
-        })
-        .catch((e) => {
-            console.log(e);
-        });
+async function downloadFile(url) {
+    window.open(url, "_blank");
 }
 
 downloadBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    downloadFile(
-        'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e5ad6f40-433a-4a3b-ab96-2bffc9f72494/resumeupdated_%287%29.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230323%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230323T030828Z&X-Amz-Expires=86400&X-Amz-Signature=9416754bc057fc7be479aab508690992a437109e7f98ae677299c475872c9e93&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D"resumeupdated_%2525287%252529.pdf"&x-id=GetObject',
-        "KJResume.pdf"
-    );
+    downloadFile(`https://xfilesbucket.s3.amazonaws.com/KJresume`);
 });
 
 function renderer(items, container, cb) {
